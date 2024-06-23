@@ -16,11 +16,11 @@ for i in pessoas:
 
     somaIdade += idade
 
-    if idade > maiorIdadeM and sexo == 'M':
+    if idade > maiorIdadeM and sexo in 'Mm':
         maiorIdadeM = idade
         nomeMaisVelho = nome
 
-    if idade < 20 and sexo == 'F':
+    if idade < 20 and sexo in 'Ff':
         menos20F += 1
 
 print('A media de idade e {}'.format(somaIdade / 4))
