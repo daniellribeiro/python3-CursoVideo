@@ -2,8 +2,8 @@ numero = int(input('Digite um numero: '))
 resultado = 1
 
 print('{}! = '.format(numero),end='')
-while numero > 1:
-    resultado = resultado * numero
-    print('{} x '.format(numero), end='')
-    numero = numero - 1
+
+for i in range(numero,1,-1):
+    resultado = resultado * i
+    print('{} x '.format(i), end='')
 print('1 = {}'.format(resultado))
