@@ -1,39 +1,24 @@
-valorOriginal = 0
-valor = 0
-cedulas50 = 0
-cedulas20 = 0
-cedulas10 = 0
-cedulas1 = 0
+valorOriginal = valor = cedula = contadorCedulas = 0
 while True:
     valor = int(input('Qual valor deseja sacar: '))
     valorOriginal = valor
-    cedulas50 = 0
-    cedulas20 = 0
-    cedulas10 = 0
-    cedulas1 = 0
-    while valor > 0:
-        if valor >= 50:
-           cedulas50 += 1
-           valor -= 50
-        elif valor >= 20:
-           cedulas20 += 1
-           valor -= 20
-        elif valor >= 10:
-            cedulas10 += 1
-            valor -= 10
-        elif valor >= 1:
-            cedulas1 += 1
-            valor -= 1
-
-    print(f'O valor {valorOriginal}')
-    if(cedulas50 > 0):
-        print(f'{cedulas50} cedulas de 50')
-    if(cedulas20 > 0):
-        print(f'{cedulas20} cedulas de 20')
-    if(cedulas10 > 0):
-        print(f'{cedulas10} cedulas de 10')
-    if(cedulas1 > 0):
-        print(f'{cedulas1} cedulas de 1')
-
+    print(f'O valor sacado e {valorOriginal}')
+    cedula = 50
+    while True:
+        if valor >= cedula:
+           contadorCedulas += 1
+           valor -= cedula
+        else:
+            if contadorCedulas > 0:
+                print(f'{contadorCedulas} de {cedula}')
+            if cedula == 50:
+                cedula = 20
+            elif cedula == 20:
+                cedula = 10
+            elif cedula == 10:
+                cedula = 1
+            contadorCedulas = 0
+            if valor == 0:
+                break
     if(input('Deseja realizar outro saque S-SIM N-NAO: ') in ('Nn')):
         break
