@@ -9,4 +9,6 @@ for i in range(quantJogos):
         linha.append(randint(0,60))
     matriz.append(linha)
 for linha in matriz:
-    print(linha)
+    for i in linha:
+        print(f'[{str(i):^5}]',end='')
+    print('',end='\n')

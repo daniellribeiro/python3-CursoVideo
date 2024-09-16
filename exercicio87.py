@@ -12,7 +12,7 @@ for i in range(3):
     matriz.append(linha)
 for i in range(3):
     for j in range(3):
-        print(f'[{matriz[i][j]}]',end='')
+        print(f'[{str(matriz[i][j]):^5}]',end='')
         if matriz[i][j] % 2 == 0:
             pares += matriz[i][j]
         if j == 2:
