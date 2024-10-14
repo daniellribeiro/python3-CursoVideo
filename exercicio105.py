@@ -5,16 +5,17 @@ def notas(notas,sit=False):
     :param sit:
     :return:
     """
-    print(f'Foram recebidas {len(notas)} notas')
-    print(f'A maior nota foi {max(notas)}')
-    print(f'A menor nota foi {min(notas)}')
-    media = round(sum(notas) / len(notas),1)
-    print(f'A media da turma e {media}')
+    r = dict()
+    r['numeroNotas'] = len(notas)
+    r['maiorNota'] = max(notas)
+    r['menorNota'] = min(notas)
+    r['media'] = round(sum(notas) / len(notas),1)
     if sit:
-        if media > 6:
-            print('SITUACAO BOA')
+        if r['media'] > 6:
+            r['situacao'] = 'SITUACAO BOA'
         else:
-            print('SITUACAO RUIM')
+            r['situacao'] = 'SITUACAO RUIM'
+    return r
 
-notas([5.5,9.5,10,6.5],sit=True)
-help(notas)
+print(notas([5.5,2.5,1.5,1,2,2.578],sit=True))
+#help(notas)
